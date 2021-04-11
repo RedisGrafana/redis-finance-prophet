@@ -121,4 +121,4 @@ When starting using Docker Compose, dashboard and plug-ins will be auto-provisio
 
 ## License
 
-- Apache License Version 2.0, see [LICENSE](https://github.com/RedisGrafana/grafana-finance-prophet/blob/main/LICENSE).
+- Apache License Version 2.0, see [LICENSE](https://github.com/RedisGrafana/redis-finance-prophet/blob/main/LICENSE).
