@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
   redis:
-    container_name: redismod
+    container_name: redis
     image: ghcr.io/redisgrafana/redis-prophet:latest
     build: ./
     ports:
