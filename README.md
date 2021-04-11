@@ -1,6 +1,6 @@
 # Analyzing stocks and crypto using Redis, Prophet and Grafana
 
-![Finance](https://raw.githubusercontent.com/RedisGrafana/redis-finance-prophet/master/images/finance.png)
+![Finance](https://raw.githubusercontent.com/RedisGrafana/redis-finance-prophet/main/images/finance.png)
 
 [![Grafana 7](https://img.shields.io/badge/Grafana-7-orange)](https://www.grafana.com)
 [![Redis Data Source](https://img.shields.io/badge/dynamic/json?color=blue&label=Redis%20Data%20Source&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fredis-datasource)](https://grafana.com/grafana/plugins/redis-datasource)
@@ -13,6 +13,8 @@
 - [Node.js](https://nodejs.org) to run scripts.
 
 ## Redis with Prophet Docker image
+
+![Redis-Prophet](https://raw.githubusercontent.com/RedisGrafana/redis-finance-prophet/main/images/redis-prophet.png)
 
 This project provides Docker image with Redis, RedisTimeSeries, RedisGears and installed Prophet libraries.
 
