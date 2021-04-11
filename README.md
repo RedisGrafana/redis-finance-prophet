@@ -108,6 +108,11 @@ docker-compose up
 
 When starting using Docker Compose, dashboard and plug-ins will be auto-provisioned and available in Grafana.
 
+## Learn more about Forecasting using Prophet
+
+- [Forecasting Stock Prices using Prophet](https://towardsdatascience.com/forecasting-stock-prices-using-prophet-652b31fb564e)
+- [Time-Series Forecasting: Predicting Stock Prices Using Facebook’s Prophet Model](https://towardsdatascience.com/time-series-forecasting-predicting-stock-prices-using-facebooks-prophet-model-9ee1657132b5)
+
 ## Contributing
 
 - Fork the repository.
