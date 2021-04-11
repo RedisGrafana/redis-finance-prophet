@@ -95,7 +95,7 @@ npm run import
 To create forecast run RedisGears function and display results on the Grafana dashboards. The process will take several minutes .
 
 ```
-redis-cli RG.PYEXECUTE "`cat ./gears/predict.py`" REQUIREMENTS prophet
+redis-cli RG.PYEXECUTE "`cat ./gears/predict.py`" REQUIREMENTS Prophet
 ```
 
 ## Start Grafana
