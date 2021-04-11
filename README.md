@@ -1,4 +1,4 @@
-# Analyzing stocks and crypto using Redis, Prophet and Grafana
+# Analyzing Stocks and Crypto using Redis, Prophet and Grafana
 
 ![Finance](https://raw.githubusercontent.com/RedisGrafana/redis-finance-prophet/main/images/finance.png)
 
