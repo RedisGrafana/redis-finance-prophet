@@ -100,7 +100,7 @@ redis-cli RG.PYEXECUTE "`cat ./gears/predict.py`" REQUIREMENTS Prophet
 
 ## Start Grafana
 
-Grafana can be started using Docker Compose or installed locally with [Redis plug-ins for Grafana](https://redisgrafana.github.io) installed.
+Grafana can be started using Docker Compose or installed locally with [Redis plug-ins for Grafana](https://redisgrafana.github.io).
 
 ```
 docker-compose up
@@ -121,4 +121,4 @@ When starting using Docker Compose, dashboard and plug-ins will be auto-provisio
 
 ## License
 
-- Apache License Version 2.0, see [LICENSE](https://github.com/RedisGrafana/grafana-redis-app/blob/master/LICENSE).
+- Apache License Version 2.0, see [LICENSE](https://github.com/RedisGrafana/grafana-finance-prophet/blob/main/LICENSE).
