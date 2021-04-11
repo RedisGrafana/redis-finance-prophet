@@ -1,0 +1,20 @@
+{
+  "author": "Mikhail Volkov",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "ioredis": "^4.19.4"
+  },
+  "description": "Analyzing stocks and crypto using Redis, Prophet and Grafana",
+  "devDependencies": {
+    "@types/node": "^14.14.20"
+  },
+  "license": "Apache-2.0",
+  "name": "redis-finance-prophet",
+  "scripts": {
+    "redis-cli": "docker exec -it redismod redis-cli",
+    "start": "docker-compose up",
+    "import": "node src/import.ts",
+    "stop": "docker-compose down"
+  },
+  "version": "1.1.0"
+}
