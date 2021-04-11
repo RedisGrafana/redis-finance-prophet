@@ -3,6 +3,7 @@ version: "3.4"
 services:
   redis:
     container_name: redismod
+    image: ghcr.io/redisgrafana/redis-prophet:latest
     build: ./
     ports:
       - 6379:6379
