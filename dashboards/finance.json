@@ -49,7 +49,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1618157859918,
+  "iteration": 1618164398947,
   "links": [],
   "panels": [
     {
@@ -390,7 +390,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 56
       },
       "id": 13,
       "panels": [],
@@ -407,7 +407,7 @@
         "h": 19,
         "w": 13,
         "x": 0,
-        "y": 30
+        "y": 57
       },
       "id": 15,
       "pluginVersion": "7.3.7",
@@ -426,7 +426,7 @@
         "h": 19,
         "w": 11,
         "x": 13,
-        "y": 30
+        "y": 57
       },
       "id": 17,
       "options": {
@@ -436,7 +436,7 @@
           "syntax": "TS.INFO key",
           "url": "https://oss.redislabs.com/redistimeseries/commands/#tsinfo"
         },
-        "output": "Redis> scan 0\n1) \"2\"\n2) 1) \"{ETH-USD:CLOSE}:yhat_lower\"\n   2) \"{TSLA:CLOSE}:yhat\"\n   3) \"{TSLA:HIGH}\"\n   4) \"{BTC-USD:ADJ}\"\n   5) \"{TSLA:CLOSE}:yhat_lower\"\n   6) \"{TSLA:VOLUME}\"\n   7) \"{ETH-USD:CLOSE}\"\n   8) \"{BTC-USD:CLOSE}:yhat\"\n   9) \"{BTC-USD:OPEN}\"\n  10) \"{TSLA:LOW}\"\n\nRedis> ts.info {TSLA:CLOSE}:yhat\n 1) \"totalSamples\"\n 2) (integer) 365\n 3) \"memoryUsage\"\n 4) (integer) 4266\n 5) \"firstTimestamp\"\n 6) (integer) 1618012800000\n 7) \"lastTimestamp\"\n 8) (integer) 1649462400000\n 9) \"retentionTime\"\n10) (integer) 0\n11) \"chunkCount\"\n12) (integer) 1\n13) \"chunkSize\"\n14) (integer) 4096\n15) \"chunkType\"\n16) \"compressed\"\n17) \"duplicatePolicy\"\n18) \"\"\n19) \"labels\"\n20) 1) 1) \"symbol\"\n       2) \"TSLA\"\n    2) 1) \"type\"\n       2) \"CLOSE\"\n    3) 1) \"future\"\n       2) \"365\"\n21) \"sourceKey\"\n22) \"\"\n23) \"rules\"\n24) (empty array)\n",
+        "output": "",
         "query": ""
       },
       "pluginVersion": "7.5.3",
@@ -490,7 +490,7 @@
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
-        "sort": 0,
+        "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
