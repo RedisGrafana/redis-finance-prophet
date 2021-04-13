@@ -1,4 +1,4 @@
-# Analyzing Stocks and Crypto using Redis, Prophet and Grafana
+# Forecasting Stocks and Crypto prices using Redis, Prophet and Grafana
 
 ![Finance](https://raw.githubusercontent.com/RedisGrafana/redis-finance-prophet/main/images/finance.png)
 
@@ -40,13 +40,13 @@ docker-compose up
 Prophet should be warmed-up to load dependencies. Can take **30+ seconds** and backup `dump.rdb` file will be more than **100Mb**.
 
 ```
-> RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS Prophet
+RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS Prophet
 ```
 
 Check that Prophet registered in the RedisGears requirements:
 
 ```
-> RG.PYDUMPREQS
+RG.PYDUMPREQS
 1)  1) "GearReqVersion"
     2) (integer) 1
     3) "Name"
@@ -94,8 +94,16 @@ npm run import
 
 To create forecast run RedisGears function and display results on the Grafana dashboards. The process will take several minutes .
 
+### 365 days
+
 ```
-redis-cli RG.PYEXECUTE "`cat ./gears/predict.py`" REQUIREMENTS Prophet
+redis-cli RG.PYEXECUTE "`cat ./gears/predict365.py`" REQUIREMENTS Prophet
+```
+
+### 90 days with
+
+```
+redis-cli RG.PYEXECUTE "`cat ./gears/predict90.py`" REQUIREMENTS prophet
 ```
 
 ## Start Grafana

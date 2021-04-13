@@ -12,7 +12,7 @@ def predict(key, period):
     labels.append(str(period))
 
     # yhat
-    yhat = key + ':yhat'
+    yhat = key + ':' + str(period) + ':yhat'
     (yhat_lower, yhat_upper) = (yhat + '_lower', yhat + '_upper')
 
     # Create new Time-series
@@ -27,10 +27,10 @@ def predict(key, period):
     df['ds'] = pd.to_datetime(df['ds'], unit='ms')
 
     # Fit Prophet model    ​
-    m = Prophet(daily_seasonality=True)
+    m = Prophet()
     m.fit(df)
 
-    # Create dataframe with the dates and eliminate weekend
+    # Create dataframe with the dates
     future = m.make_future_dataframe(periods=int(period))
     forecast = m.predict(future)
 
