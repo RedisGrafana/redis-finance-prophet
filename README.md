@@ -103,7 +103,7 @@ redis-cli RG.PYEXECUTE "`cat ./gears/predict365.py`" REQUIREMENTS Prophet
 ### 90 days with
 
 ```
-redis-cli RG.PYEXECUTE "`cat ./gears/predict90.py`" REQUIREMENTS prophet
+redis-cli RG.PYEXECUTE "`cat ./gears/predict90.py`" REQUIREMENTS Prophet
 ```
 
 ## Start Grafana
