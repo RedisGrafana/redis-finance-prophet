@@ -50,7 +50,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/arm
 
-      - name: Build and push linux/arm
+      - name: Push images
         id: docker_push
         uses: docker/build-push-action@v2
         with:
