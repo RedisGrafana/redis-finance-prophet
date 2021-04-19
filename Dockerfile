@@ -34,10 +34,10 @@ RUN set -ex;\
 COPY --from=redistimeseries ${LD_LIBRARY_PATH}/*.so ${LD_LIBRARY_PATH}/
 
 # Start Redis and install Deps
-RUN nohup bash -c "${REDIS}&" && sleep 4 && redis-cli RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS $REQ && redis-cli save
+RUN nohup bash -c "${REDIS}&" && sleep 4 && redis-cli RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS $REQ
 
 # Start Redis and install Prophet
-RUN nohup bash -c "${REDIS}&" && sleep 4 && redis-cli RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS prophet && redis-cli save
+RUN nohup bash -c "${REDIS}&" && sleep 4 && redis-cli RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS prophet
 
 ENTRYPOINT ["redis-server"]
 CMD ["--loadmodule", "/usr/lib/redis/modules/redistimeseries.so", \
