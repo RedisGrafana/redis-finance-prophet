@@ -34,13 +34,6 @@ Supported platforms are:
 docker run -p 6379:6379 --name=redis-prophet ghcr.io/redisgrafana/redis-prophet:latest
 ```
 
-Using Docker Compose:
-
-```bash
-docker-compose pull
-docker-compose up
-```
-
 ## Prophet requirements
 
 Check that Prophet downloaded and installed in the RedisGears requirements:
@@ -111,6 +104,7 @@ redis-cli RG.PYEXECUTE "`cat ./gears/predict90.py`" REQUIREMENTS prophet
 Grafana can be started using Docker Compose or installed locally with [Redis plug-ins for Grafana](https://redisgrafana.github.io).
 
 ```
+docker-compose pull
 docker-compose up
 ```
 
