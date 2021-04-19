@@ -5,8 +5,7 @@ ENV LD_LIBRARY_PATH=/usr/lib/redis/modules
 
 ARG MODULES=/var/opt/redislabs/lib/modules
 ARG RG=${MODULES}/redisgears.so
-ARG PYTHON=${MODULES}/python3
-ARG REDIS="redis-server --loadmodule ${RG} PythonHomeDir ${PYTHON}"
+ARG REDIS="redis-server --loadmodule ${RG} PythonHomeDir /opt/redislabs/lib/modules/python3"
 
 ARG DEPS="gcc g++ build-essential python-pip"
 ARG REQ="Cython>=0.22 \
@@ -34,10 +33,9 @@ RUN set -ex;\
 COPY --from=redistimeseries ${LD_LIBRARY_PATH}/*.so ${LD_LIBRARY_PATH}/
 
 # Start Redis and install Deps
-RUN nohup bash -c "${REDIS}&" && sleep 4 && redis-cli RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS $REQ
-
-# Start Redis and install Prophet
-RUN nohup bash -c "${REDIS}&" && sleep 4 && redis-cli RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS prophet
+RUN nohup bash -c "${REDIS}&" && sleep 4 && redis-cli RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS $REQ \
+    && redis-cli RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS prophet \
+    && redis-cli save
 
 ENTRYPOINT ["redis-server"]
 CMD ["--loadmodule", "/usr/lib/redis/modules/redistimeseries.so", \

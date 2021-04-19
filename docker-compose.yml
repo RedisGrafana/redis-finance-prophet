@@ -7,12 +7,10 @@ services:
     build: ./
     ports:
       - 6379:6379
-    volumes:
-      - ./data:/data
 
   grafana:
     container_name: grafana
-    image: grafana/grafana:latest
+    image: ghcr.io/redisgrafana/redis-app:latest
     ports:
       - "3000:3000"
     environment:
@@ -21,7 +19,6 @@ services:
       - GF_AUTH_BASIC_ENABLED=false
       - GF_ENABLE_GZIP=true
       - GF_USERS_DEFAULT_THEME=light
-      - GF_INSTALL_PLUGINS=redis-app
     volumes:
       - ./provisioning:/etc/grafana/provisioning
       - ./dashboards:/var/lib/grafana/dashboards

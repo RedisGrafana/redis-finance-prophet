@@ -11,7 +11,7 @@
   "license": "Apache-2.0",
   "name": "redis-finance-prophet",
   "scripts": {
-    "redis-cli": "docker exec -it redismod redis-cli",
+    "redis-cli": "docker exec -it redis redis-cli",
     "start": "docker-compose up",
     "import": "node src/import.ts",
     "stop": "docker-compose down"
