@@ -7,14 +7,20 @@
 [![Redis Application plug-in](https://img.shields.io/badge/dynamic/json?color=blue&label=Redis%20Application%20plug-in&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fredis-app)](https://grafana.com/grafana/plugins/redis-app)
 [![Docker](https://github.com/RedisGrafana/redis-finance-prophet/actions/workflows/docker.yml/badge.svg)](https://github.com/RedisGrafana/redis-finance-prophet/actions/workflows/docker.yml)
 
+## Introduction
+
+This project demonstrates how to analyze Stocks and Crypto historical data stored as [RedisTimeSeries](https://oss.redislabs.com/redistimeseries/) using serverless engine [RedisGears](https://oss.redislabs.com/redisgears/), [Facebook’s Prophet Model](https://facebook.github.io/prophet/) to predict prices and [Redis Data Source](https://github.com/RedisGrafana/grafana-redis-datasource) to visualize time series with predictions in Grafana.
+
+![Redis-Prophet](https://raw.githubusercontent.com/RedisGrafana/redis-finance-prophet/main/images/redis-prophet.png)
+
+Read the full store on Volkov Labs blog [Forecasting Stocks and Crypto prices using Redis, Prophet, and Grafana](https://volkovlabs.com/forecasting-stocks-and-crypto-prices-using-redis-prophet-and-grafana-b1630638d469).
+
 ## Requirements
 
 - [Docker](https://docker.com) to start Redis and Grafana.
 - [Node.js](https://nodejs.org) to run scripts.
 
 ## Redis with Prophet Docker image
-
-![Redis-Prophet](https://raw.githubusercontent.com/RedisGrafana/redis-finance-prophet/main/images/redis-prophet.png)
 
 This project provides Docker image with Redis, RedisTimeSeries, RedisGears and installed Prophet libraries.
 
@@ -35,22 +41,16 @@ docker-compose pull
 docker-compose up
 ```
 
-## Prophet Warm-up
+## Prophet requirements
 
-Prophet should be warmed-up to load dependencies. Can take **30+ seconds** and backup `dump.rdb` file will be more than **100Mb**.
-
-```
-RG.PYEXECUTE "GearsBuilder().run()" REQUIREMENTS Prophet
-```
-
-Check that Prophet registered in the RedisGears requirements:
+Check that Prophet downloaded and installed in the RedisGears requirements:
 
 ```
 RG.PYDUMPREQS
 1)  1) "GearReqVersion"
     2) (integer) 1
     3) "Name"
-    4) "Prophet"
+    4) "prophet"
     5) "IsDownloaded"
     6) "yes"
     7) "IsInstalled"
@@ -97,13 +97,13 @@ To create forecast run RedisGears function and display results on the Grafana da
 ### 365 days
 
 ```
-redis-cli RG.PYEXECUTE "`cat ./gears/predict365.py`" REQUIREMENTS Prophet
+redis-cli RG.PYEXECUTE "`cat ./gears/predict365.py`" REQUIREMENTS prophet
 ```
 
 ### 90 days with
 
 ```
-redis-cli RG.PYEXECUTE "`cat ./gears/predict90.py`" REQUIREMENTS Prophet
+redis-cli RG.PYEXECUTE "`cat ./gears/predict90.py`" REQUIREMENTS prophet
 ```
 
 ## Start Grafana
@@ -116,8 +116,9 @@ docker-compose up
 
 When starting using Docker Compose, dashboard and plug-ins will be auto-provisioned and available in Grafana.
 
-## Learn more about Forecasting using Prophet
+## Learn more
 
+- Redis plug-ins for Grafana [Documentation](https://redisgrafana.github.io/)
 - [Forecasting Stock Prices using Prophet](https://towardsdatascience.com/forecasting-stock-prices-using-prophet-652b31fb564e)
 - [Time-Series Forecasting: Predicting Stock Prices Using Facebook’s Prophet Model](https://towardsdatascience.com/time-series-forecasting-predicting-stock-prices-using-facebooks-prophet-model-9ee1657132b5)
 
