@@ -1,6 +1,10 @@
 # Change Log
 
-## v1.1.0 (IN PROGRESS)
+## v1.1.0 (2021-05-10)
+
+- Update dependencies and imported data from May, 10 2021
+- Add Docker master and README updates #7
+- Update Docker workflow #6
 
 ### Features / Enhancements
 
