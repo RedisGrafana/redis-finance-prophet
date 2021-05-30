@@ -1,5 +1,11 @@
 # Change Log
 
+## v1.2.0 (IN PROGRESS)
+
+### Features / Enhancements
+
+- Update dependencies and imported data from May, 29 2021
+
 ## v1.1.0 (2021-05-10)
 
 ### Features / Enhancements

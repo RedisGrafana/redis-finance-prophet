@@ -45,5 +45,5 @@ def predict(key, period):
 
 
 gb = GearsBuilder()
-gb.foreach(lambda x: predict(x['key'], 90))
+gb.foreach(lambda x: predict(x['key'], 30))
 gb.run('{*CLOSE}')
