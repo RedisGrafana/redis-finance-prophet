@@ -2,11 +2,11 @@
   "author": "Mikhail Volkov",
   "dependencies": {
     "axios": "^0.21.1",
-    "ioredis": "^4.27.2"
+    "ioredis": "^4.27.3"
   },
   "description": "Analyzing stocks and crypto using Redis, Prophet and Grafana",
   "devDependencies": {
-    "@types/node": "^15.0.2"
+    "@types/node": "^15.6.1"
   },
   "license": "Apache-2.0",
   "name": "redis-finance-prophet",
@@ -16,7 +16,8 @@
     "start:master": "docker-compose -f docker-compose/master.yml pull && docker-compose -f docker-compose/master.yml up",
     "import": "node src/import.ts",
     "stop": "docker-compose down",
-    "stop:master": "docker-compose -f docker-compose/master.yml down"
+    "stop:master": "docker-compose -f docker-compose/master.yml down",
+    "upgrade": "yarn upgrade --latest"
   },
-  "version": "1.1.0"
+  "version": "1.2.0"
 }
