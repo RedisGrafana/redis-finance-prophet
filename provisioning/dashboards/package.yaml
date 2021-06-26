@@ -1,12 +1,7 @@
 apiVersion: 1
 
 providers:
-  - name: redis
-    orgId: 1
+  - name: Default # A uniquely identifiable name for the provider
     type: file
-    disableDeletion: false
-    editable: true
-    updateIntervalSeconds: 10
-    allowUiUpdates: true
     options:
-      path: /var/lib/grafana/dashboards
+      path: /etc/grafana/provisioning/dashboards

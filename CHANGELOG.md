@@ -1,10 +1,13 @@
 # Change Log
 
-## v1.2.0 (IN PROGRESS)
+## v1.2.0 (2021-06-26)
 
 ### Features / Enhancements
 
-- Update dependencies and imported data from May, 29 2021
+- Update dependencies and imported data from May, 29 2021 (#10)
+- Update diagram (#11)
+- Update imported data from June, 26 2021
+- Update dahboars to Grafana 8
 
 ## v1.1.0 (2021-05-10)
 
