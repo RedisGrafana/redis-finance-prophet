@@ -6,8 +6,8 @@
 
 - Update dependencies and imported data from May, 29 2021 (#10)
 - Update diagram (#11)
-- Update imported data from June, 26 2021
-- Update dahboars to Grafana 8
+- Update imported data from June, 26 2021 (#12)
+- Update dashboars to Grafana 8 (#12)
 
 ## v1.1.0 (2021-05-10)
 
