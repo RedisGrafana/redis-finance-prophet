@@ -2,7 +2,7 @@
 
 ![Finance](https://raw.githubusercontent.com/RedisGrafana/redis-finance-prophet/main/images/finance.png)
 
-[![Grafana 7](https://img.shields.io/badge/Grafana-7-orange)](https://www.grafana.com)
+[![Grafana 8](https://img.shields.io/badge/Grafana-8-orange)](https://www.grafana.com)
 [![Redis Data Source](https://img.shields.io/badge/dynamic/json?color=blue&label=Redis%20Data%20Source&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fredis-datasource)](https://grafana.com/grafana/plugins/redis-datasource)
 [![Redis Application plug-in](https://img.shields.io/badge/dynamic/json?color=blue&label=Redis%20Application%20plug-in&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fredis-app)](https://grafana.com/grafana/plugins/redis-app)
 [![Docker](https://github.com/RedisGrafana/redis-finance-prophet/actions/workflows/docker.yml/badge.svg)](https://github.com/RedisGrafana/redis-finance-prophet/actions/workflows/docker.yml)
@@ -24,21 +24,22 @@ Read the full store on Volkov Labs blog [Forecasting Stocks and Crypto prices us
 
 This project provides Docker image with Redis, RedisTimeSeries, RedisGears and installed Prophet libraries.
 
-Supported platforms are:
-
-- linux/amd64
-- linux/arm64
-- linux/arm
-
 ```bash
 docker run -p 6379:6379 --name=redis-prophet ghcr.io/redisgrafana/redis-prophet:latest
+```
+
+To start Redis-Prophet and Grafana using Docker Composer run:
+
+```bash
+docker-compose pull
+docker-compose up
 ```
 
 ## Prophet requirements
 
 Check that Prophet downloaded and installed in the RedisGears requirements:
 
-```
+```bash
 RG.PYDUMPREQS
 1)  1) "GearReqVersion"
     2) (integer) 1
@@ -77,33 +78,45 @@ RG.PYDUMPREQS
        24) "pandas-1.2.3-cp37-cp37m-manylinux1_x86_64.whl"
 ```
 
-## Import and Forecast data
+## Import data
 
 Import script will load data from CSV files in `/import` folder to RedisTimeSeries.
 
-```
+```bash
 npm run import
 ```
 
 To create forecast run RedisGears function and display results on the Grafana dashboards. The process will take several minutes .
 
-### 365 days
+## Forecast 365 days
 
-```
+```bash
 redis-cli RG.PYEXECUTE "`cat ./gears/predict365.py`" REQUIREMENTS prophet
 ```
 
-### 90 days with
+or
+
+```bash
+npm run predict:365
+```
+
+## Forecast 90 days
 
 ```
 redis-cli RG.PYEXECUTE "`cat ./gears/predict90.py`" REQUIREMENTS prophet
+```
+
+or
+
+```bash
+npm run predict:90
 ```
 
 ## Start Grafana
 
 Grafana can be started using Docker Compose or installed locally with [Redis plug-ins for Grafana](https://redisgrafana.github.io).
 
-```
+```bash
 docker-compose pull
 docker-compose up
 ```
