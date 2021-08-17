@@ -1,11 +1,11 @@
-FROM redislabs/redistimeseries:latest as redistimeseries
-FROM redislabs/redisgears:latest
+FROM redislabs/redistimeseries:edge as redistimeseries
+FROM redislabs/redisgears:edge
 
 ENV LD_LIBRARY_PATH=/usr/lib/redis/modules
 
 ARG MODULES=/var/opt/redislabs/lib/modules
 ARG RG=${MODULES}/redisgears.so
-ARG REDIS="redis-server --loadmodule ${RG} PythonHomeDir /opt/redislabs/lib/modules/python3"
+ARG REDIS="redis-server --loadmodule ${RG} Plugin /var/opt/redislabs/modules/rg/plugin/gears_python.so"
 
 ARG DEPS="gcc g++ build-essential python-pip"
 ARG REQ="Cython>=0.22 \
@@ -40,4 +40,4 @@ RUN nohup bash -c "${REDIS}&" && sleep 4 && redis-cli RG.PYEXECUTE "GearsBuilder
 ENTRYPOINT ["redis-server"]
 CMD ["--loadmodule", "/usr/lib/redis/modules/redistimeseries.so", \
     "--loadmodule", "/var/opt/redislabs/lib/modules/redisgears.so", \
-    "PythonHomeDir", "/opt/redislabs/lib/modules/python3"]
+    "Plugin", "/var/opt/redislabs/modules/rg/plugin/gears_python.so"]
