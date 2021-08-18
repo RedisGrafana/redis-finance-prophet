@@ -1,10 +1,11 @@
 # Change Log
 
-## v1.3.0 (IN PROGRESS)
+## v1.3.0 (2021-08-18)
 
 ### Features / Enhancements
 
-- Moving to Edge docker build
+- Moving to Edge docker build (#14)
+- Upgrade packages (#15)
 
 ## v1.2.0 (2021-06-26)
 
