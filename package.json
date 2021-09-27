@@ -23,5 +23,5 @@
     "stop:master": "docker-compose -f docker-compose/master.yml down",
     "upgrade": "yarn upgrade --latest"
   },
-  "version": "1.3.0"
+  "version": "1.4.0"
 }

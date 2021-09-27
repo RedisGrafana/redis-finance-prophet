@@ -7,7 +7,7 @@ ARG MODULES=/var/opt/redislabs/lib/modules
 ARG RG=${MODULES}/redisgears.so
 ARG REDIS="redis-server --loadmodule ${RG} Plugin /var/opt/redislabs/modules/rg/plugin/gears_python.so"
 
-ARG DEPS="gcc g++ build-essential python-pip"
+ARG DEPS="gcc g++ build-essential python3-pip"
 ARG REQ="Cython>=0.22 \
     cmdstanpy==0.9.68 \
     pystan~=2.19.1.1 \

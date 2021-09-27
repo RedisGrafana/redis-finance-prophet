@@ -1,5 +1,11 @@
 # Change Log
 
+## v1.4.0 (2021-09-27)
+
+### Features / Enhancements
+
+- Fix Docker build (python3-pip)
+
 ## v1.3.0 (2021-08-18)
 
 ### Features / Enhancements
