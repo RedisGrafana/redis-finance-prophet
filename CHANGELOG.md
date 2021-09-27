@@ -4,7 +4,9 @@
 
 ### Features / Enhancements
 
-- Fix Docker build (python3-pip)
+- Fix Docker build (#16)
+- Upgrade dependencies (#17)
+- Update financial data (Sep, 27) and dashboard (#18)
 
 ## v1.3.0 (2021-08-18)
 
