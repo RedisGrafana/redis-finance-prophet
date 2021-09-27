@@ -5,7 +5,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "8.0.3"
+      "version": "8.1.5"
     },
     {
       "type": "panel",
@@ -41,6 +41,12 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
@@ -49,7 +55,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1624722553405,
+  "iteration": 1632751145995,
   "links": [],
   "panels": [
     {
@@ -355,7 +361,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 46
       },
       "id": 13,
       "panels": [],
@@ -368,7 +374,7 @@
         "h": 19,
         "w": 13,
         "x": 0,
-        "y": 29
+        "y": 47
       },
       "id": 15,
       "pluginVersion": "7.3.7",
@@ -383,7 +389,7 @@
         "h": 19,
         "w": 11,
         "x": 13,
-        "y": 29
+        "y": 47
       },
       "id": 17,
       "options": {
@@ -456,12 +462,12 @@
     ]
   },
   "time": {
-    "from": "2021-05-27T16:35:05.225Z",
-    "to": "2021-07-18T12:26:43.206Z"
+    "from": "now-30d",
+    "to": "now+30d"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Finance",
   "uid": "s8KgKkXMk",
-  "version": 3
+  "version": 1
 }
