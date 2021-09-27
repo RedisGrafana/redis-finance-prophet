@@ -88,28 +88,41 @@ npm run import
 
 To create forecast run RedisGears function and display results on the Grafana dashboards. The process will take several minutes .
 
-## Forecast 365 days
+## Forecast 365, 90, 30 and 7 days
 
 ```bash
 redis-cli RG.PYEXECUTE "`cat ./gears/predict365.py`" REQUIREMENTS prophet
+redis-cli RG.PYEXECUTE "`cat ./gears/predict90.py`" REQUIREMENTS prophet
+redis-cli RG.PYEXECUTE "`cat ./gears/predict30.py`" REQUIREMENTS prophet
+redis-cli RG.PYEXECUTE "`cat ./gears/predict7.py`" REQUIREMENTS prophet
 ```
 
-or
+Using `npm`
 
 ```bash
 npm run predict:365
-```
-
-## Forecast 90 days
-
-```
-redis-cli RG.PYEXECUTE "`cat ./gears/predict90.py`" REQUIREMENTS prophet
-```
-
-or
-
-```bash
 npm run predict:90
+npm run predict:30
+npm run predict:7
+```
+
+Script output
+
+```
+> Executing task in folder redis-finance-prophet: yarn run predict:7 <
+
+yarn run v1.22.10
+$ redis-cli RG.PYEXECUTE "`cat ./gears/predict7.py`" REQUIREMENTS prophet
+1) 1) "{'event': None, 'key': '{BTC-USD:CLOSE}', 'type': 'module', 'value': None}"
+   2) "{'event': None, 'key': '{ADA-USD:CLOSE}', 'type': 'module', 'value': None}"
+   3) "{'event': None, 'key': '{ETH-USD:CLOSE}', 'type': 'module', 'value': None}"
+   4) "{'event': None, 'key': '{AAPL:CLOSE}', 'type': 'module', 'value': None}"
+   5) "{'event': None, 'key': '{MATIC-USD:CLOSE}', 'type': 'module', 'value': None}"
+   6) "{'event': None, 'key': '{PTON:CLOSE}', 'type': 'module', 'value': None}"
+   7) "{'event': None, 'key': '{TSLA:CLOSE}', 'type': 'module', 'value': None}"
+   8) "{'event': None, 'key': '{DOGE-USD:CLOSE}', 'type': 'module', 'value': None}"
+2) (empty array)
+✨  Done in 88.01s.
 ```
 
 ## Start Grafana
