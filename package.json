@@ -1,12 +1,12 @@
 {
   "author": "Mikhail Volkov",
   "dependencies": {
-    "axios": "^0.21.1",
-    "ioredis": "^4.27.8"
+    "axios": "^0.21.4",
+    "ioredis": "^4.27.9"
   },
   "description": "Analyzing stocks and crypto using Redis, Prophet and Grafana",
   "devDependencies": {
-    "@types/node": "^16.6.1"
+    "@types/node": "^16.10.1"
   },
   "license": "Apache-2.0",
   "name": "redis-finance-prophet",
